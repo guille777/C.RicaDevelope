@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Primer Portfolio">
+        <meta name="author" content="Guillermo">
+        <title>
+          {% block title %}
+            Portfolio 1!
+          {% endblock %}
+        </title>
+
+        {% block stylesheets %}
+          <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+          <link rel="stylesheet" href="{{ asset('css/one-page-wonder.css') }}" />
+          <link rel="stylesheet" href="{{ asset('css/estilos.css') }}" />
+          <link rel="icon" type="image/x-icon" href="{{ asset('img/costa.png') }}" />
+        {% endblock %}
+    </head>
+
+    <body>
+      {% block body %}
+
+      {% endblock %}
+
+    <!-- Navigation fuera de body carga todo... -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+
+      <div class="container">
+
+        <a class="navbar-brand" href="{{ path('homepage') }}">Desarrollo Web Costa Rica</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+
+            <li class="nav-item active">
+              <a class="nav-link" href="{{ path('proyectos') }}">Ejemplo1</a>
+            </li>
+           
+            <li class="nav-item active">
+                 <a class="nav-link" href="{{ path('proyectos') }}">Ejemplo2</a>
+            </li>
+
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+             <li class="nav-item active">
+              <a color="red" class="nav-link" href="{{ path('proyectos') }}">Admin</a>
+            </li>
+            <li class="nav-item active">
+              <a style="color: blue;" class="nav-link" href="{{ path('proyectos') }}">login</a>
+            </li>
+
+              {% if app.user %}
+             <!--  <li class="nav-item">
+                <a class="nav-link text-warning" href="{{path("logout")}}">Logout</a>
+              </li> -->
+              {% endif %}
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <br>
+<!--     <section id="tarjeta" style="">
+      
+<div class="container-fluid">
+ 
+  <p>You can define it using md,sm and xs</p>
+  <div class="row">
+    <div class="col-md-4 col-sm-4 col-xs-4" style="background-color:lavender;">PHP</div>
+    <div class="col-md-4 col-sm-4 col-xs-4" style="background-color:lavenderblush;">JavaScript</div>
+    <div class="col-md-4 col-sm-4 col-xs-4" style="background-color:lavender;">JQuery</div>
+  </div>
+</div>
+
+ </section> -->
+
+ <br><br>
+<!-- <a href=""><img height="250px" src="{{ asset('/proyectos')}}" alt="Norway"></a> -->
+
+ <div class="row content">
+
+ <div class="col-md-4 col-sm-6">
+
+  <h6 class="card-title"><b>1º-Desarrollo Aplicaciones Web</b></h6>
+  <!-- LYNK desde href con asset para las rutas, primero controller etc... -->
+  <a href="{{ asset('/primeroDaw')}}">
+    <img class="card-img-top" src="img/florida.jpg" alt="Card image cap">
+  </a>
+
+  <div class="card-body">
+    <p class="card-text">Contenido del primer curso de desarrollo</p>
+  </div>
+</div>
+
+<br>
+
+ <div class="col-md-4 col-sm-6">
+  <h6 class="card-title"><b>2º-Desarrollo Aplicaciones Web</b></h6>
+  <img class="card-img-top" src="img/florida.jpg" alt="Card image cap">
+  <div class="card-body">
+    <p class="card-text">Contenido del segundo curso de desarrollo</p>
+  </div>
+</div>
+
+<br>
+
+ <div class="col-md-4 col-sm-6">
+   <h6 class="card-title"><b>Código y lenguajes de programación</b></h6>
+  <img class="card-img-top" src="img/uno.png" alt="Card image cap">
+  <div class="card-body">
+    <p class="card-text">Código y lenguajes de programación para seguir estudiando, ampliaciones</p>
+  </div>
+</div>
+
+<br>
+
+ <div class="col-md-4 col-sm-6">
+    <h6 class="card-title"><b>Sistemas Operativos</b></h6>
+  <img class="card-img-top" src="img/sistemas.png" alt="Card image cap">
+  <div class="card-body">
+    <p class="card-text">Sistemas operativos estudiando: Microsoft Windows, Linux, cmd seguir ampliando...</p>
+  </div>
+</div>
+<br>
+
+ <div class="col-md-4 col-sm-6">
+    <h6 class="card-title"><b>Frameworks-Cms</b></h6>
+  <img class="card-img-top" src="img/symfony.png" alt="Card image cap">
+  <div class="card-body">
+    <p class="card-text">Desarrollo web con symfony v 3.4.6, road to 4.x...seguir estudiando es muy extenso...SESIONES, SERVICIOS, PROCEDIMIENTOS, COMANDOS...refinamiento enrutamiento y sistema de archivos...etc</p>
+  </div>
+</div>
+
+<br>
+
+
+ <div class="col-md-4 col-sm-6">
+    <h6 class="card-title"><b>Tecnologias y software</b></h6>
+  <img class="card-img-top" src="img/putty.png" alt="Card image cap">
+  <div class="card-body">
+    <p class="card-text">Software aprendido durante el curso, seguir</p>
+  </div>
+</div>
+
+<br>
+
+ <div class="col-md-4 col-sm-6">
+  <h6 class="card-title"><b>Sistema de control de versiones</b></h6>
+  <img class="card-img-top" src="img/git.jpg" alt="fotografia de ...">
+  <div class="card-body">
+    <p class="card-text">Github-Gitlab: Control de versionado, trabajo corporativo</p>
+  </div>
+</div>
+
+<br>
+
+ <div class="col-md-4 col-sm-6">
+  <h6 class="card-title"><b>Empresa nueva, posicionamiento, ampliaciones...</b></h6>
+  <img class="card-img-top" src="img/new.jpg" alt="Card image cap">
+  <div class="card-body">
+    <p class="card-text">Dinámica empresa, posicionamiento, otros</p>
+  </div>
+</div>
+
+
+
+<div>
+
+  <br><br><br>
+  
+
+
+
+   <!--  <section>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 order-2">
+            <div class="p-5">
+              <img class="img-fluid rounded-circle" src="https://unsplash.it/500/500?image=836" alt="">
+            </div>
+          </div>
+          <div class="col-md-6 order-1">
+            <div class="p-5">
+              <h2 class="display-4">For those about to rock...</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <div class="p-5">
+              <img class="img-fluid rounded-circle" src="https://unsplash.it/500/500?image=452" alt="">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="p-5">
+              <h2 class="display-4">We salute you!</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 order-2">
+            <div class="p-5">
+              <img class="img-fluid rounded-circle" src="https://unsplash.it/500/500?image=453" alt="">
+            </div>
+          </div>
+          <div class="col-md-6 order-1">
+            <div class="p-5">
+              <h2 class="display-4">Let there be rock!</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+ -->
+
+    <!--  <div class="card-body">
+                <h6 class="card-title mb-1" style="color: green;"><a href="https://github.com/guille777/Junio2018/tree/master/gestor2Fermax">Enlace  Github Last</a></h6>
+              </div>
+
+                  <div class="card-body">
+                <h6 class="card-title mb-1"><a href="#">Jeffery Wellings</a></h6>
+                <p class="card-text small">Nice shot from the skate park!
+                  <a href="#">#kickflip</a>
+                  <a href="#">#holdmybeer</a>
+                  <a href="#">#igotthis</a>
+                </p>
+              </div>
+
+                 <div class="card-body">
+                <h6 class="card-title mb-1"><a href="#">Jeffery Wellings</a></h6>
+                <p class="card-text small">Nice shot from the skate park!
+                  <a href="#">#kickflip</a>
+                  <a href="#">#holdmybeer</a>
+                  <a href="#">#igotthis</a>
+                </p>
+              </div>
+
+                 <div class="card-body">
+                <h6 class="card-title mb-1"><a href="#">Jeffery Wellings</a></h6>
+                <p class="card-text small">Nice shot from the skate park!
+                  <a href="#">#kickflip</a>
+                  <a href="#">#holdmybeer</a>
+                  <a href="#">#igotthis</a>
+                </p>
+              </div>
+ -->
+
+  
+<footer id="sticky">&copy&nbspFooter Works, LLC - 2016-BUSCAR BUEN FOOTER</footer>
+  
+{% block javascripts %}
+<!-- Realizar las llamadas de archivos como toca, desde jquery/    js/    img/ -->
+  <script src="{{ asset('css/jquery.min.js') }}"></script>
+  <script src="{{ asset('css/bootstrap.bundle.min.js') }}"></script>
+{% endblock %}
+
+</body>
+</html>
